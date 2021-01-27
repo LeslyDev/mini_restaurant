@@ -6,19 +6,23 @@
 
 {% block content %}
     <h3 class="d-flex align-items-center justify-content-center mt-5">Информация о свободных столиках</h3> <br>
-    {% for free_table in free_table_info %}
-        <div class="card text-center">
-          <div class="card-header">
-            {{ free_table.place }}
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">На {{ free_table.size }} персоны</h5>
-            <p class="card-text">{{ free_table.description }}</p>
-            <a href="{% url 'book_table_url' table_id=free_table.id %}" class="btn btn-primary">Забронировать</a>
-          </div>
-          <div class="card-footer text-muted">
-            Сегодня
-          </div>
-        </div>
-    {% endfor %}
+    {% if free_table_info %}
+        {% for free_table in free_table_info %}
+            <div class="card text-center">
+              <div class="card-header">
+                {{ free_table.place }}
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">На {{ free_table.size }} персоны</h5>
+                <p class="card-text">{{ free_table.description }}</p>
+                <a href="{% url 'book_table_url' table_id=free_table.id %}" class="btn btn-primary">Забронировать</a>
+              </div>
+              <div class="card-footer text-muted">
+                Сегодня
+              </div>
+            </div>
+        {% endfor %}
+    {% else %}
+        <h5 class="d-flex align-items-center justify-content-center mt-5">К сожалению свободных столиков сейчас нет</h5>
+    {% endif %}
 {% endblock %}
