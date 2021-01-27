@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    MyCompany
+{% endblock %}
+
+{% block content %}
+    <h3 class="d-flex align-items-center justify-content-center mt-5">Список блюд нашего ресторана.</h3> <br>
+    <div class="d-flex align-items-center justify-content-center mt-5">
+        {% for f in food %}
+            <div class="card ml-4" style="width: 18rem;">
+                <img src="/media/{{ f.image }}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{ f.name }}</h5>
+                    <p class="card-text">{{ f.description }}</p>
+                    <p class="card-text">{{ f.price }} рублей</p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+
+{% endblock %}
