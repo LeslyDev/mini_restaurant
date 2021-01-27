@@ -114,6 +114,7 @@ USE_L10N = True
 
 USE_TZ = True
 
+EXIST_TIME = ["13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00", "22:00", "23:00"]
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/

@@ -14,7 +14,9 @@ class MenuElement(models.Model):
 
 class Table(models.Model):
     size = models.IntegerField()
-    time = models.DateTimeField(blank=True, null=True)
+    place = models.CharField(max_length=15, blank=True, null=True)
+    description = models.TextField(blank=True, null=True)
+    time = models.CharField(max_length=7, blank=True, null=True)
     status = models.CharField(max_length=4, default='free', blank=False, null=False)
     owner_name = models.CharField(max_length=10, blank=True)
     owner_number = models.CharField(max_length=12, blank=True)
